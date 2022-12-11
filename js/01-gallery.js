@@ -19,8 +19,7 @@ function createImageMarkup(markups) {
             />
           </a>
         </div>`
-     )
-    .join("");
+     ).join("");    
 }       
 
 function onProhibitsDownloadingImage(event) {
@@ -29,7 +28,6 @@ function onProhibitsDownloadingImage(event) {
 
 function onModalViewingImage(event) {
   const viewediImage = event.target.dataset.source;
-
   if (event.target.nodeName !== "IMG") return;
   const instance = basicLightbox.create(
     `<img src="${viewediImage}">`,
