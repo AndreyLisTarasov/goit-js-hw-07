@@ -5,7 +5,6 @@ const galleryContainer = document.querySelector(`.gallery`);
 galleryContainer.addEventListener(`click`, onProhibitsDownloadingImage);
 galleryContainer.addEventListener(`click`, onModalViewingImage);
 galleryContainer.insertAdjacentHTML("beforeend", createImageMarkup(galleryItems));
-
 function createImageMarkup(markups) {
   return markups
     .map(({ preview, original, description }) =>
@@ -20,12 +19,10 @@ function createImageMarkup(markups) {
           </a>
         </div>`
      ).join("");    
-}       
-
+}
 function onProhibitsDownloadingImage(event) {
   event.preventDefault();
 }
-
 function onModalViewingImage(event) {
   const viewediImage = event.target.dataset.source;
   if (event.target.nodeName !== "IMG") return;
@@ -39,10 +36,8 @@ function onModalViewingImage(event) {
         document.removeEventListener(`keydown`, closingModalWindowClickingOnEscape);
       },
     }    
-  );
-  
+  );  
   instance.show();
-
   function closingModalWindowClickingOnEscape(event) {
     console.log(event);
     if (event.code !== `Escape`)

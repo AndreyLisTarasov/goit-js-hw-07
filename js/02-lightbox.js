@@ -14,10 +14,9 @@ function createImageMarkup(markups) {
         </a>`
     ).join("");   
 }
-
 galleryContainer.insertAdjacentHTML("beforeend", createImageMarkup(galleryItems));
-
-var lightbox = new SimpleLightbox(".gallery a", {
+var lightbox = new SimpleLightbox(".gallery a", 
+{
   captionsData: "alt",
   captionPosition: `bottom`,
   captionDelay: 250,
